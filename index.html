@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runtime – Calculateur de Pace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <!-- ——— Titre statique ——— -->
+        <h1 class="title">Runtime</h1>
+        <h2 class="subtitle">Le calculateur de pace</h2>
+
+        <!-- ——— Animation orbitale ——— -->
+        <div class="orbit-container">
+            <svg id="orbit-svg" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
+                <g id="orbit-group" transform="rotate(-12 150 75)">
+                    <ellipse cx="150" cy="75" rx="120" ry="30"
+                             fill="none" stroke="#FFFFFF" stroke-width="2"/>
+                    <circle id="orbit-dot" r="5" fill="#FFFFFF"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- ——— Boutons distance ——— -->
+        <div class="distance-buttons">
+            <button class="distance-button active" data-distance="5">5 K</button>
+            <button class="distance-button" data-distance="10">10 K</button>
+            <button class="distance-button" data-distance="21.1">Semi</button>
+            <button class="distance-button" data-distance="42.2">Marathon</button>
+        </div>
+
+        <!-- ——— Pace + slider ——— -->
+        <div class="pace-slider-container">
+            <label class="pace-label" for="pace-slider">
+                Pace : <span id="running-pace">--:-- min/km</span>
+            </label>
+            <input type="range" id="pace-slider" min="0" max="100" value="40" step="1">
+        </div>
+
+        <!-- ——— Résultats ——— -->
+        <div class="result-container">
+            <div class="result-item">
+                <label>Vitesse :</label>
+                <span id="speed-kmh">-- km/h</span>
+            </div>
+            <div class="result-item">
+                <label>Temps final :</label>
+                <span id="finish-time">--:--:--</span>
+            </div>
+        </div>
+
+        <button id="save-goal" class="save-button">Enregistrer mon objectif</button>
+    </div>
+
+    <!-- ——— Signature ——— -->
+    <p class="footer">
+        Made with 🤍 by
+        <a href="https://www.linkedin.com/in/armanamini/" target="_blank" rel="noopener noreferrer">
+            Arman
+        </a>
+    </p>
+
+    <script src="script.js"></script>
+</body>
+</html>

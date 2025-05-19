@@ -1,0 +1,147 @@
+/* ——— Thème noir & blanc “terminal” ——— */
+
+:root {
+    --bg-black:  #0A0A0A;
+    --fg-white:  #F5F5F5;
+    --fg-gray:   #AAAAAA;
+    --accent:    #FFFFFF;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Courier New", "IBM Plex Mono", monospace;
+    background-color: var(--bg-black);
+    color: var(--fg-white);
+    padding: 20px;
+    letter-spacing: 0.4px;
+}
+
+/* —— Conteneur —— */
+.calculator-container {
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 24px;
+    background-color: var(--bg-black);
+    border: 1px solid var(--fg-gray);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* —— Titres —— */
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--fg-gray);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* —— Animation orbitale —— */
+.orbit-container { width: 100%; height: 80px; margin-bottom: 24px; }
+#orbit-svg       { width: 100%; height: 100%; }
+
+/* —— Boutons distance —— */
+.distance-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.distance-button {
+    width: 23%;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.distance-button:hover { background: var(--fg-white); color: var(--bg-black); }
+.distance-button.active {
+    background: var(--fg-white);
+    color: var(--bg-black);
+    font-weight: 700;
+}
+
+/* —— Pace + slider —— */
+.pace-slider-container { margin-bottom: 28px; }
+.pace-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Slider aminci */
+#pace-slider {
+    -webkit-appearance: none;
+    width: 100%; height: 6px;
+    background: var(--fg-gray);
+    border-radius: 3px;
+    outline: none; cursor: pointer;
+}
+#pace-slider::-webkit-slider-runnable-track { height: 6px; background: var(--fg-gray); border-radius: 3px; }
+#pace-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg-black);
+    margin-top: -6px;
+}
+#pace-slider::-moz-range-track  { height: 6px; background: var(--fg-gray); border-radius: 3px; }
+#pace-slider::-moz-range-thumb  {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg-black);
+}
+
+/* —— Résultats —— */
+.result-container {
+    padding: 20px;
+    border: 1px solid var(--fg-gray);
+    border-radius: 6px;
+}
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.result-item:last-child { margin-bottom: 0; }
+#finish-time { font-size: 1.2rem; font-weight: 700; }
+
+/* —— Bouton enregistrer —— */
+.save-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.save-button:hover   { background: var(--fg-white); color: var(--bg-black); }
+.save-button:active { background: var(--fg-gray);  color: var(--bg-black); }
+
+/* —— Footer —— */
+.footer {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--fg-gray);
+}
+.footer a {
+    color: var(--fg-white);
+    text-decoration: underline;
+}
+.footer a:hover { color: var(--fg-gray); }
