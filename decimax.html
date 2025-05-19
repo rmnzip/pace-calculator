@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Décimax – Lanceur de dé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 class="title">Décimax</h1>
+        <h2 class="subtitle">dé minimaliste à 6 faces</h2>
+
+        <!-- —— Dé SVG, trois faces visibles —— -->
+        <div class="dice-wrapper">
+            <svg id="dice-svg" viewBox="0 0 100 100">
+                <!-- Faces (traits 1 px) -->
+                <polygon id="face-top"    points="30,10 70,10 90,25 50,25" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+                <polygon id="face-front"  points="30,10 50,25 50,65 30,50" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+                <polygon id="face-right"  points="50,25 90,25 90,65 50,65" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+
+                <!-- Pips sur la face frontale (id=f1..f7) -->
+                <circle id="f1" cx="38" cy="22" r="3" fill="#FFFFFF"/>
+                <circle id="f2" cx="44" cy="28" r="3" fill="#FFFFFF"/>
+                <circle id="f3" cx="38" cy="34" r="3" fill="#FFFFFF"/>
+                <circle id="f4" cx="44" cy="40" r="3" fill="#FFFFFF"/>
+                <circle id="f5" cx="38" cy="46" r="3" fill="#FFFFFF"/>
+                <circle id="f6" cx="44" cy="52" r="3" fill="#FFFFFF"/>
+                <circle id="f7" cx="41" cy="37" r="3" fill="#FFFFFF"/> <!-- pip central -->
+            </svg>
+        </div>
+
+        <!-- Bouton compact -->
+        <button id="roll-btn" class="btn-compact">Let’s Roll&nbsp;(r)</button>
+    </div>
+
+    <!-- Navigation -->
+    <p class="nav-link">
+        <a href="index.html"    target="_blank" rel="noopener noreferrer">Runtime</a> – 
+        <a href="datediff.html" target="_blank" rel="noopener noreferrer">Datediff</a> – 
+    </p>
+
+    <!-- Signature -->
+    <p class="footer">
+        Made with 🤍 by
+        <a href="https://www.linkedin.com/in/armanamini/" target="_blank" rel="noopener noreferrer">Arman</a>
+    </p>
+
+    <script src="script-decimax.js"></script>
+</body>
+</html>

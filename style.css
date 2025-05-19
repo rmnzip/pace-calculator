@@ -18,7 +18,7 @@ body {
     letter-spacing: 0.4px;
 }
 
-/* —— Conteneur —— */
+/* —— Conteneur commun —— */
 .calculator-container {
     max-width: 400px;
     margin: 40px auto 0;
@@ -30,72 +30,60 @@ body {
 }
 
 /* —— Titres —— */
-.title {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
-}
+.title   { font-size: 2rem;  font-weight: 700; letter-spacing: 0.08em; margin-bottom: 4px; }
+.subtitle{ font-size: 0.9rem; color: var(--fg-gray); margin-bottom: 28px; font-weight: 400; letter-spacing: 0.05em; }
 
-.subtitle {
-    font-size: 0.9rem;
-    color: var(--fg-gray);
-    margin-bottom: 20px;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-}
-
-/* —— Animation orbitale —— */
+/* —— Animation orbitale (Runtime uniquement) —— */
 .orbit-container { width: 100%; height: 80px; margin-bottom: 24px; }
 #orbit-svg       { width: 100%; height: 100%; }
 
-/* —— Boutons distance —— */
+/* —— Boutons distance (Runtime) —— */
 .distance-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
+    display: flex; justify-content: space-between; margin-bottom: 40px;
 }
 .distance-button {
-    width: 23%;
-    padding: 8px 0;
-    font-size: 0.85rem;
-    border: 1px solid var(--accent);
-    background: transparent;
-    color: var(--accent);
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
+    width: 23%; padding: 8px 0; font-size: 0.85rem;
+    border: 1px solid var(--accent); background: transparent; color: var(--accent);
+    cursor: pointer; transition: background 0.2s ease, color 0.2s ease;
 }
-.distance-button:hover { background: var(--fg-white); color: var(--bg-black); }
-.distance-button.active {
-    background: var(--fg-white);
-    color: var(--bg-black);
+.distance-button:hover  { background: var(--fg-white); color: var(--bg-black); }
+.distance-button.active { background: var(--fg-white); color: var(--bg-black); font-weight: 700; }
+
+/* —— Bloc Datediff : champs de date —— */
+.datediff-inputs {
+    margin-top: 4px;          /* espace supplémentaire sous le sous-titre */
+    margin-bottom: 28px;
+    text-align: left;
+}
+.datediff-inputs label {
+    display: block;           /* Date 2 passe à la ligne */
+    margin-bottom: 16px;      /* espace entre Date 1 et Date 2 */
     font-weight: 700;
 }
+.datediff-inputs input[type="date"] {
+    width: 100%; margin-top: 6px; padding: 8px 6px;
+    font-family: inherit; font-size: 0.9rem;
+    color: var(--accent); background: var(--bg-black);
+    border: 1px solid var(--accent); border-radius: 4px;
+}
+.datediff-inputs input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);        /* icône calendrier en blanc (WebKit) */
+}
 
-/* —— Pace + slider —— */
+/* —— Pace + slider (Runtime) —— */
 .pace-slider-container { margin-bottom: 28px; }
 .pace-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-    margin-bottom: 12px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 700; margin-bottom: 12px;
 }
-
-/* Slider aminci */
 #pace-slider {
-    -webkit-appearance: none;
-    width: 100%; height: 6px;
-    background: var(--fg-gray);
-    border-radius: 3px;
-    outline: none; cursor: pointer;
+    -webkit-appearance: none; width: 100%; height: 6px;
+    background: var(--fg-gray); border-radius: 3px; outline: none; cursor: pointer;
 }
 #pace-slider::-webkit-slider-runnable-track { height: 6px; background: var(--fg-gray); border-radius: 3px; }
 #pace-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 18px; height: 18px; border-radius: 50%;
-    background: var(--accent); border: 2px solid var(--bg-black);
-    margin-top: -6px;
+    -webkit-appearance: none; width: 18px; height: 18px;
+    border-radius: 50%; background: var(--accent); border: 2px solid var(--bg-black); margin-top: -6px;
 }
 #pace-slider::-moz-range-track  { height: 6px; background: var(--fg-gray); border-radius: 3px; }
 #pace-slider::-moz-range-thumb  {
@@ -105,43 +93,74 @@ body {
 
 /* —— Résultats —— */
 .result-container {
-    padding: 20px;
-    border: 1px solid var(--fg-gray);
-    border-radius: 6px;
+    padding: 20px; border: 1px solid var(--fg-gray); border-radius: 6px;
 }
 .result-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;
 }
 .result-item:last-child { margin-bottom: 0; }
-#finish-time { font-size: 1.2rem; font-weight: 700; }
-
-/* —— Bouton enregistrer —— */
-.save-button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px 0;
-    border: 1px solid var(--accent);
-    background: transparent;
-    color: var(--accent);
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
+#finish-time, #days-result, #weeks-result, #months-result {
+    font-size: 1.2rem; font-weight: 700;
 }
-.save-button:hover   { background: var(--fg-white); color: var(--bg-black); }
+
+/* —— Bouton enregistrer (Runtime) —— */
+.save-button {
+    width: 100%; margin-top: 20px; padding: 10px 0;
+    border: 1px solid var(--accent); background: transparent; color: var(--accent);
+    font-weight: 700; cursor: pointer; transition: background 0.2s ease, color 0.2s ease;
+}
+.save-button:hover  { background: var(--fg-white); color: var(--bg-black); }
 .save-button:active { background: var(--fg-gray);  color: var(--bg-black); }
+
+
+/* —— Bloc Convertix —— */
+.tz-block {
+    margin-bottom: 24px;
+    text-align: left;
+    font-weight: 700;
+}
+.tz-block input[type="datetime-local"],
+.tz-block select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--accent);
+    background: var(--bg-black);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+}
+.tz-block select option {
+    background: var(--bg-black);
+    color: var(--fg-white);
+}
+
+
+/* —— Ovale Datediff, mêmes dimensions que Runtime —— */
+.infinity-container{
+    width:100%;
+    height:80px;          /* identique à .orbit-container */
+    margin-bottom:24px;
+}
+.infinity-container svg{width:100%;height:100%}
+
+
+
+/* —— Lien retour vers Runtime —— */
+.nav-link {
+    margin: 12px 0 4px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.nav-link a { color: var(--fg-white); text-decoration: underline; }
+.nav-link a:hover { color: var(--fg-gray); }
 
 /* —— Footer —— */
 .footer {
-    margin-top: 12px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--fg-gray);
+    margin-top: 12px; text-align: center; font-size: 0.8rem; color: var(--fg-gray);
 }
-.footer a {
-    color: var(--fg-white);
-    text-decoration: underline;
-}
+.footer a { color: var(--fg-white); text-decoration: underline; }
 .footer a:hover { color: var(--fg-gray); }
+
+

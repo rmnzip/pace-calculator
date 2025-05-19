@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datediff – Différence de dates</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 class="title">Datedif</h1>
+        <h2 class="subtitle">Calcule l’écart entre deux dates</h2>
+
+        <!-- —— Même ovale que Runtime —— -->
+        <div class="infinity-container">
+            <svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
+                <g id="ellipse-group" transform="rotate(-12 150 75)">
+                    <ellipse id="datediff-ellipse" cx="150" cy="75" rx="120" ry="30"
+                             fill="none" stroke="#FFFFFF" stroke-width="2"/>
+                    <circle id="dot-a" r="5" fill="#FFFFFF"/>
+                    <circle id="dot-b" r="5" fill="#FFFFFF"/>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Sélecteurs de dates -->
+        <div class="datediff-inputs">
+            <label>Date&nbsp;1&nbsp;:
+                <input type="date" id="date1">
+            </label>
+            <label>Date&nbsp;2&nbsp;:
+                <input type="date" id="date2">
+            </label>
+        </div>
+
+        <!-- Résultats -->
+        <div class="result-container">
+            <div class="result-item">
+                <label>Jours&nbsp;:</label>
+                <span id="days-result">--</span>
+            </div>
+            <div class="result-item">
+                <label>Semaines&nbsp;:</label>
+                <span id="weeks-result">--</span>
+            </div>
+            <div class="result-item">
+                <label>Mois&nbsp;(≈)&nbsp;:</label>
+                <span id="months-result">--</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <p class="nav-link">
+        <a href="index.html"    target="_blank" rel="noopener noreferrer">Runtime</a> – 
+        <a href="datediff.html" target="_blank" rel="noopener noreferrer">Datedif</a>
+    </p>
+
+    <!-- Signature -->
+    <p class="footer">
+        Made with 🤍 by
+        <a href="https://www.linkedin.com/in/armanamini/" target="_blank" rel="noopener noreferrer">Arman</a>
+    </p>
+
+    <script src="script-datediff.js"></script>
+</body>
+</html>

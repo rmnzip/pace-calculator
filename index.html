@@ -8,11 +8,10 @@
 </head>
 <body>
     <div class="calculator-container">
-        <!-- ——— Titre statique ——— -->
         <h1 class="title">Runtime</h1>
-        <h2 class="subtitle">Le calculateur de pace</h2>
+        <h2 class="subtitle">Calculateur de pace</h2>
 
-        <!-- ——— Animation orbitale ——— -->
+        <!-- Animation orbitale (inchangée) -->
         <div class="orbit-container">
             <svg id="orbit-svg" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
                 <g id="orbit-group" transform="rotate(-12 150 75)">
@@ -23,7 +22,7 @@
             </svg>
         </div>
 
-        <!-- ——— Boutons distance ——— -->
+        <!-- Boutons distance -->
         <div class="distance-buttons">
             <button class="distance-button active" data-distance="5">5 K</button>
             <button class="distance-button" data-distance="10">10 K</button>
@@ -31,7 +30,7 @@
             <button class="distance-button" data-distance="42.2">Marathon</button>
         </div>
 
-        <!-- ——— Pace + slider ——— -->
+        <!-- Pace + slider -->
         <div class="pace-slider-container">
             <label class="pace-label" for="pace-slider">
                 Pace : <span id="running-pace">--:-- min/km</span>
@@ -39,7 +38,7 @@
             <input type="range" id="pace-slider" min="0" max="100" value="40" step="1">
         </div>
 
-        <!-- ——— Résultats ——— -->
+        <!-- Résultats -->
         <div class="result-container">
             <div class="result-item">
                 <label>Vitesse :</label>
@@ -54,12 +53,17 @@
         <button id="save-goal" class="save-button">Enregistrer mon objectif</button>
     </div>
 
-    <!-- ——— Signature ——— -->
+    <!-- Signature + lien vers Datediff -->
+    <p class="nav-link">
+        <a href="index.html" target="_blank" rel="noopener noreferrer">Runtime</a> - 
+        <a href="datediff.html" target="_blank" rel="noopener noreferrer">Datedif</a>
+
+    </p>
+
+    <!-- Signature -->
     <p class="footer">
         Made with 🤍 by
-        <a href="https://www.linkedin.com/in/armanamini/" target="_blank" rel="noopener noreferrer">
-            Arman
-        </a>
+        <a href="https://www.linkedin.com/in/armanamini/" target="_blank" rel="noopener noreferrer">Arman</a>
     </p>
 
     <script src="script.js"></script>

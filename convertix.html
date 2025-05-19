@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertix – Convertisseur de fuseaux horaires</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Luxon CDN pour gestion fiable des time-zones -->
+    <script src="https://unpkg.com/luxon@3.4.2/build/global/luxon.min.js"></script>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1 class="title">Convertix</h1>
+        <h2 class="subtitle">convertit les horaires entre deux villes</h2>
+
+        <!-- Sélection source -->
+        <div class="tz-block">
+            <label>Depuis&nbsp;:</label>
+            <input type="datetime-local" id="src-dt">
+            <select id="src-tz"></select>
+        </div>
+
+        <!-- Sélection destination -->
+        <div class="tz-block">
+            <label>Vers&nbsp;:</label>
+            <select id="dst-tz"></select>
+        </div>
+
+        <!-- Résultats -->
+        <div class="result-container">
+            <div class="result-item">
+                <label>Date & heure :</label>
+                <span id="dst-dt">--</span>
+            </div>
+            <div class="result-item">
+                <label>UTC offset :</label>
+                <span id="dst-offset">--</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation commune -->
+    <p class="nav-link">
+        <a href="index.html"    target="_blank" rel="noopener noreferrer">Runtime</a> – 
+        <a href="datediff.html" target="_blank" rel="noopener noreferrer">Datediff</a> – 
+        <a href="decimax.html" target="_blank" rel="noopener noreferrer">Décimax</a>
+    </p>
+
+    <!-- Signature -->
+    <p class="footer">
+        Made with 🤍 by
+        <a href="https://www.linkedin.com/in/armanamini/" target="_blank" rel="noopener noreferrer">Arman</a>
+    </p>
+
+    <script src="script-convertix.js"></script>
+</body>
+</html>
