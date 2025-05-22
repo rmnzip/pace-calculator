@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lifomatix – Calendrier de vie</title>
+
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style-lifo.css" />
+  </head>
+
+  <body>
+    <main class="calculator-container">
+      <h1 class="title">Lifomatix</h1>
+      <p class="subtitle">Calendrier de vie</p>
+
+      <!-- Ellipse de progression -->
+      <div class="orbit-container" aria-hidden="true">
+        <svg
+          id="orbit-svg"
+          viewBox="0 0 300 150"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g id="orbit-group" transform="rotate(-12 150 75)">
+            <ellipse
+              cx="150"
+              cy="75"
+              rx="120"
+              ry="30"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2"
+            />
+            <circle id="orbit-dot" r="5" fill="#ffffff" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Saisie de la date de naissance -->
+      <label for="birthdate" class="bday-label">Date de naissance</label>
+      <input type="date" id="birthdate" required />
+      <button id="matixer-btn" disabled>Calculer</button>
+
+      <!-- Grille des 500 mois -->
+      <div
+        class="grid-container"
+        id="grid-container"
+        aria-label="Calendrier de vie"
+      ></div>
+    </main>
+
+    <!-- Navigation secondaire -->
+    <nav class="nav-link">
+      <a href="index.html">Runtime</a> –
+      <a href="datediff.html" target="_blank" rel="noopener">Datedif</a> –
+      <a href="lifomatix.html" target="_blank" rel="noopener">Lifomatix</a>
+    </nav>
+
+    <!-- Crédit -->
+    <footer class="footer">
+      Made with <span aria-label="heart">🤍</span> by Arman
+    </footer>
+
+    <!-- Logique de l’appli -->
+    <script src="script-lifomatix.js"></script>
+  </body>
+</html>

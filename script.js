@@ -14,6 +14,8 @@ const ellipseCX  = 150, ellipseCY = 75, rx = 120, ry = 30;   // same as SVG
 const MIN_PACE = 3, MAX_PACE = 9;
 const LOG_K    = Math.log(MAX_PACE / MIN_PACE) / 100;
 
+
+
 // -------- Variables d’état --------
 let currentDistance = 5;  // km
 let currentPace;
@@ -65,6 +67,7 @@ function loadSavedGoal() {
     setActiveDistanceButton();
     updateDisplays();
 }
+
 
 saveButton.addEventListener('click', () => {
     localStorage.setItem('runningGoal', JSON.stringify({
